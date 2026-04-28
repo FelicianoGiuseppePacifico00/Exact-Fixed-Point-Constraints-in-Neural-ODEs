@@ -1080,7 +1080,7 @@ class Model_1_pseudoinverse(nn.Module):
         return ("|" * filled) + ("-" * (length - filled))
 
     def _measure_train_batch_time(self, loader, device, optimizer, n_batches=3):
-        """Warmup timing like your original: do a few *real* train steps."""
+        """Warmup timing: do a few *real* train steps."""
         import time
         self.train()
         it = iter(loader)
@@ -1244,7 +1244,7 @@ class Model_1_pseudoinverse(nn.Module):
             else:
                 print("Estimated total training time: N/A")
 
-        # setup early stopping (helper already in your lib)
+        # setup early stopping 
         es = None
         if early_stopping is not None:
             metric = early_stopping.get("metric", "val_loss")
@@ -1326,7 +1326,7 @@ class Model_1_pseudoinverse(nn.Module):
             train_loss_epoch = loss_sum / max(count, 1)
             train_acc_epoch  = correct / max(count, 1)
 
-            # validation (uses your existing evaluate -> returns {"acc","loss"})
+            # validation (uses existing evaluate -> returns {"acc","loss"})
             if eval_loader is not None:
                 eval_metrics = self.evaluate(eval_loader, device=device)  # :contentReference[oaicite:3]{index=3}
                 val_acc  = eval_metrics["acc"]
@@ -1890,7 +1890,7 @@ class Model_1_QR(nn.Module):
         return ("|" * filled) + ("-" * (length - filled))
 
     def _measure_train_batch_time(self, loader, device, optimizer, n_batches=3):
-        """Warmup timing like your original: do a few *real* train steps."""
+        """Warmup timing like: do a few *real* train steps."""
         import time
         self.train()
         it = iter(loader)
@@ -2061,7 +2061,7 @@ class Model_1_QR(nn.Module):
             else:
                 print("Estimated total training time: N/A")
 
-        # setup early stopping (helper already in your lib)
+        # setup early stopping (helper already in lib)
         es = None
         if early_stopping is not None:
             metric = early_stopping.get("metric", "val_loss")
@@ -2148,7 +2148,7 @@ class Model_1_QR(nn.Module):
             train_loss_epoch = loss_sum / max(count, 1)
             train_acc_epoch  = correct / max(count, 1)
 
-            # validation (uses your existing evaluate -> returns {"acc","loss"})
+            # validation (uses existing evaluate -> returns {"acc","loss"})
             if eval_loader is not None:
                 eval_metrics = self.evaluate(eval_loader, device=device)  # :contentReference[oaicite:3]{index=3}
                 val_acc  = eval_metrics["acc"]
