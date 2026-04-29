@@ -10,7 +10,7 @@ This repository contains the code used to reproduce the numerical experiments in
 
 ## Requirements
 
-The experiments require Python 3, PyTorch, NumPy, Matplotlib, and pandas.
+The experiments require Python 3, PyTorch, NumPy, Matplotlib
 
 ## Reproducing the experiments
 
